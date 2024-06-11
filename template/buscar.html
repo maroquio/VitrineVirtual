@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block subtitulo %}Resultados da Busca por {{ termo }}{% endblock %}
+{% block conteudo %}
+<h1>Resultados da Busca por <span class="text-danger">{{ termo }}</span></h1>
+<hr>
+{% include "include/grid_produtos.html" %}
+{% endblock %}

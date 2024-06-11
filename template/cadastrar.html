@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block subtitulo %}Principal{% endblock %}
+{% block conteudo %}
+<h1>Cadastro de Usuário</h1>
+<hr>
+<form action="/post_cadastrar" method="post" class="col-12 col-md-6 col-xl-5">
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="nome" name="nome" placeholder=" " required autofocus>
+        <label for="nome" class="form-label">Nome</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="email" class="form-control" id="email" name="email" placeholder=" " required>
+        <label for="email" class="form-label">E-mail</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="password" class="form-control" id="senha" name="senha" placeholder=" " required>
+        <label for="senha" class="form-label">Senha</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="password" class="form-control" id="conf_senha" name="conf_senha" placeholder=" " required>
+        <label for="conf_senha" class="form-label">Confirme a Senha</label>
+    </div>
+    <div class="mb-3">
+        <button type="submit" class="btn btn-danger">Cadastrar</button>
+    </div>
+    <hr>
+    <div>
+        <p>Já é cadastrado? Clique no botão abaixo para entrar.</p>
+        <a href="/entrar" class="btn btn-sm btn-outline-dark">Quero Entrar</a>
+    </div>
+</form>
+{% endblock %}

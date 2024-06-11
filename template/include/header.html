@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark p-3">
+    <div class="container">
+        <a class="navbar-brand" href="/">Vitrine Virtual</a>
+        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="menuPrincipal">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Principal</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/entrar">Entrar</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="/#" id="menuAreaRestrita" data-bs-toggle="dropdown">
+                        Área Restrita</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="/usuario/gerenciamento">Gerenciamento de Produtos</a>
+                        <a class="dropdown-item" href="/usuario/sair">Sair</a>
+                    </div>
+                </li>
+            </ul>
+            <form class="d-flex" action="/buscar" method="get">
+                <input class="form-control form-control-sm me-2" type="search" name="q" placeholder="Buscar..." required />
+                <button class="btn btn-sm btn-danger" type="submit">
+                    Buscar
+                </button>
+            </form>
+        </div>
+    </div>
+</nav>

@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block subtitulo %}Cadastrar Produto{% endblock %}
+{% block conteudo %}
+<h1>Cadastrar Produto</h1>
+<hr>
+<form action="/usuario/post_cadastrar_produto" method="post" class="col-12" enctype="multipart/form-data">
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="nome" name="nome" placeholder=" " required autofocus>
+        <label for="nome" class="form-label">Nome</label>
+    </div>
+    <div class="form-floating mb-3">
+        <textarea class="form-control" id="nome" name="descricao" placeholder=" " required style="height:120px"></textarea>
+        <label for="descricao" class="form-label">Descrição</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="preco" name="preco" placeholder=" " required>
+        <label for="preco" class="form-label">Preço</label>
+    </div>
+    <div class="w-100 mb-3">
+        <label for="foto" class="form-label">Foto</label>
+        <input type="file" class="form-control" id="foto" name="foto" onchange="previewImage(event)" accept="image/jpeg">
+        <img id="preview" class="img-thumbnail w-25 mt-3 d-none" />
+    </div>
+    <div>
+        <a href="/usuario/gerenciamento" class="btn btn-outline-dark me-1">Voltar</a>
+        <button type="submit" class="btn btn-danger">Cadastrar</button>
+    </div>
+</form>
+<script src="/static/js/previewImage.js"></script>
+{% endblock %}

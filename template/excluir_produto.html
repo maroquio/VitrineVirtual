@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block subtitulo %}Excluir Produto{% endblock %}
+{% block conteudo %}
+<h1>Excluir Produto</h1>
+<hr>
+<p>Tem certeza de que deseja excluir o produto <b>{{ produto.nome }}</b>?</p>
+<form action="/usuario/post_excluir_produto/{{ produto.id }}" method="post" class="col-12">
+    <input type="hidden" name="nome" value="{{ produto.nome }}">
+    <div>
+        <a href="/usuario/gerenciamento" class="btn btn-outline-dark">Cancelar</a>
+        <button type="submit" class="btn btn-danger">Excluir</button>
+    </div>
+</form>
+{% endblock %}

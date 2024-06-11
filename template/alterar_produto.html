@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block subtitulo %}Alterar Produto{% endblock %}
+{% block conteudo %}
+<h1>Alterar Produto</h1>
+<hr>
+<form action="/usuario/post_alterar_produto/{{ produto.id }}" method="post" class="col-12" enctype="multipart/form-data">
+    <input type="hidden" name="id" value="{{ produto.id }}">
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="nome" name="nome" placeholder=" " required autofocus value="{{ produto.nome }}">
+        <label for="nome" class="form-label">Nome</label>
+    </div>
+    <div class="form-floating mb-3">
+        <textarea class="form-control" id="nome" name="descricao" placeholder=" " required style="height:120px">{{ produto.descricao }}</textarea>
+        <label for="descricao" class="form-label">Descrição</label>
+    </div>
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="preco" name="preco" placeholder=" " required value="{{ produto.preco }}">
+        <label for="preco" class="form-label">Preço</label>
+    </div>
+    <div class="w-100 mb-3">
+        <label for="foto" class="form-label">Foto</label>
+        <input type="file" class="form-control" id="foto" name="foto" onchange="previewImage(event)" accept="image/jpeg">
+        <img id="preview" src="/static/img/produto/{{'{:04d}'.format(produto.id)}}.jpg" class="img-thumbnail w-25 mt-3" />
+    </div>
+    <div>
+        <a href="/usuario/gerenciamento" class="btn btn-outline-dark me-1">Voltar</a>
+        <button type="submit" class="btn btn-danger">Alterar</button>
+    </div>
+</form>
+<script src="/static/js/previewImage.js"></script>
+{% endblock %}
